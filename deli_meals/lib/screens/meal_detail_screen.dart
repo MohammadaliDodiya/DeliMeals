@@ -30,13 +30,6 @@ class MealDetailScreen extends StatelessWidget {
         border: Border.all(
           color: Colors.grey,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            offset: Offset(3, 5),
-            blurRadius: 5,
-          ),
-        ],
         borderRadius: const BorderRadius.all(
           Radius.circular(10),
         ),
@@ -64,7 +57,7 @@ class MealDetailScreen extends StatelessWidget {
               width: double.infinity,
               child: Image.network(
                 meal.imageUrl!,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
             buildSectionTitle(context, "Ingredients"),
@@ -78,7 +71,7 @@ class MealDetailScreen extends StatelessWidget {
                       color: Theme.of(context).accentColor,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 10),
+                            vertical: 10, horizontal: 10),
                         child: Text(
                           meal.ingredients![index],
                         ),
@@ -90,7 +83,7 @@ class MealDetailScreen extends StatelessWidget {
               ),
               200,
             ),
-            buildSectionTitle(context, "Steps"),
+            buildSectionTitle(context, " Steps "),
             buildContainer(
               context,
               ListView.builder(
@@ -106,7 +99,7 @@ class MealDetailScreen extends StatelessWidget {
                       Divider(
                         color: index == meal.steps!.length - 1
                             ? Colors.transparent
-                            : Colors.grey,
+                            : Colors.green,
                       ),
                     ],
                   );
@@ -116,7 +109,7 @@ class MealDetailScreen extends StatelessWidget {
               350,
             ),
             SizedBox(
-              height: 10,
+              height: 29,
             )
           ],
         ),
