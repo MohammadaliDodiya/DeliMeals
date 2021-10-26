@@ -62,33 +62,27 @@ class MealItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(
-                      15,
+                      20,
                     ),
                     topRight: Radius.circular(
-                      15,
+                      10,
                     ),
                   ),
                   child: Image.network(
                     meal!.imageUrl!,
                     height: 250,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+                    width: 100,
+                    fit: BoxFit.fit,
                   ),
                 ),
                 Positioned(
                   bottom: 20,
-                  right: 10,
                   child: Container(
                     width: 300,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     color: Colors.black54,
                     child: Text(
                       meal!.title!,
-                      style: TextStyle(
-                        fontSize: 26,
-                        color: Colors.white,
-                      ),
-                      softWrap: true,
                       overflow: TextOverflow.fade,
                     ),
                   ),
@@ -108,17 +102,6 @@ class MealItem extends StatelessWidget {
                       ),
                       Text(
                         "${meal!.duration!} min",
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.work),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        complexityText,
                       ),
                     ],
                   ),
