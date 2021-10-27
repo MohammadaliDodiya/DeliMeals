@@ -38,6 +38,9 @@ class _TabsScreenState extends State<TabsScreen> {
       drawer: Drawer(
         child: Text("Drawer"),
       ),
+ drawer: Drawer(
+        child: Text("Drawer Test"),
+      ),
       body: _pages[_selectedPage]["page"],
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.white,
